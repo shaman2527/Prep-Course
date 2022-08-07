@@ -6,8 +6,11 @@ function obtenerMayor(x, y) {
     // Si son iguales, devuelve cualquiera de los dos
     // Tu código:
     if (x > y) {
-        return x; //Bien
+        return x;
+    } else if (x < y) {
+        return y;
     }
+
 }
 
 function mayoriaDeEdad(edad) {
@@ -15,10 +18,12 @@ function mayoriaDeEdad(edad) {
     //Si tiene 18 años ó más, devolver --> "Allowed"
     //Si es menor, devolver --> "Not allowed"
     if (edad >= 18) {
+        console.log(edad);
         return "Allowed";
-    } else { //Bien
+    } else {
         return "Not allowed";
     }
+
 }
 
 function conection(status) {
@@ -207,18 +212,25 @@ function fizzBuzz(numero) {
     // Si "numero" es divisible entre 5, devuelve "buzz"
     // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
     // De lo contrario, devuelve el numero
+
     let fizz = "fizz";
     let buzz = "buzz";
     let fizzbuzz = "fizzbuzz";
+
+    if (numero % 3 == 0 && numero % 5 == 0) {
+
+        return fizzbuzz;
+    }
     if (numero % 3 == 0) {
         return fizz;
-    } else if (numero % 5 == 0) {
-        return buzz;
-    } else if (numero % 3 == 0 && numero % 5 == 0) {
-        return fizzbuzz;
-    } else {
-        return numero;
     }
+    if (numero % 5 == 0) {
+        return buzz;
+    }
+    return numero;
+
+
+
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -253,7 +265,7 @@ function esPrimo(numero) {
             primo = false;
         }
     }
-    return primo;
+    return false;
 }
 
 function esVerdadero(valor) {
@@ -274,11 +286,11 @@ function tablaDelSeis() {
     //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
     //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
     //Escribe tu código aquí   
-    let tabla = [];
-    for (let i = 0; i <= 60; i++) {
-        tabla.push(i * 6);
+    let Array = [];
+    for (let i = 0; i <= 10; i++) {
+        Array.push(i * 6);
     }
-    return tabla;
+    return Array;
 
 }
 
@@ -290,17 +302,20 @@ function tieneTresDigitos(numero) {
     } else {
         return false;
     }
-
-
 }
 
 function doWhile(numero) {
     //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
     //Retornar el valor final.
     //Usar el bucle do ... while.
+    //Escribe tu código aquí
+
+    let i = 0;
     do {
         numero += 5;
-    } while (numero < 8);
+        i++;
+
+    } while (i < 8);
     return numero;
 
 
